@@ -6,7 +6,7 @@
     state: present
 
 - name: download automysql script
-  unarchive:
+  fetch:
     src: "{{ automysqlbackup_download_url }}"
     dest: "{{ automysqlbackup_install_dst }}"
     remote_src: yes

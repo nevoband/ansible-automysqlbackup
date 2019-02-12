@@ -2,7 +2,7 @@
 # defaults file for automsyqlbackup
 
 #URL to get automysqlbackup executable script
-automysqlbackup_download_url: https://github.com/nevoband/automysqlbackup/archive/master.zip
+automysqlbackup_download_url: https://raw.githubusercontent.com/nevoband/automysqlbackup/master/automysqlbackup
 
 #installation directory
 automysqlbackup_install_dst: '/usr/local/bin/'
