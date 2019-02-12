@@ -1,0 +1,25 @@
+---
+# defaults file for automsyqlbackup
+
+#URL to get automysqlbackup executable script
+automysqlbackup_download_url: https://github.com/nevoband/automysqlbackup/archive/master.zip
+
+#installation directory
+automysqlbackup_install_dst: '/usr/local/bin/'
+
+#configuration file bigip_log_destination
+automysqlbackup_config_dst: '/etc/automysqlbackup/automysqlbackup.conf'
+
+#the host we would like to backup
+automysqlbackup_host: 'localhost'
+
+#backup directory
+automysqlbackup_backups_directory: '/var/backup/db'
+
+#user to log in as
+automysqlbackup_username: 'automysqlbackup'
+
+#password should be stored in vault
+automysqlbackup_password: 'secret'
+
+

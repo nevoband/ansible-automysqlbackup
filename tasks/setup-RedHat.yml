@@ -1,0 +1,36 @@
+---
+
+- name: install packages
+  yum:
+    name: '{{ __automysqlbackup_packages }}'
+    state: present
+
+- name: download automysql script
+  unarchive:
+    src: "{{ automysqlbackup_download_url }}"
+    dest: "{{ automysqlbackup_install_dst }}"
+    remote_src: yes
+
+- name: create config directory
+  file:
+    path: /etc/automysqlbackup
+    state: directory
+
+- name: write configuration
+  template:
+    src: automysqlbackup.conf.j2
+    dest: '{{ automysqlbackup_config_dst }}'
+    owner: root
+    group: root
+    mode: 0600
+
+- name: setup cron job under /etc/cron.d
+  cron:
+    name: automysqlbackup backup job
+    hour: '*/4'
+    user: root
+    job: '{{ automysqlbackup_install_dst }}'
+    cron_file: ansible_automysqlbackup
+  
+
+  
