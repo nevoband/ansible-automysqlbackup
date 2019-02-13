@@ -5,7 +5,7 @@
 automysqlbackup_download_url: https://raw.githubusercontent.com/nevoband/automysqlbackup/master/automysqlbackup
 
 # installation directory
-automysqlbackup_install_dst: '/usr/local/bin/'
+automysqlbackup_install_dst: '/usr/local/bin/automysqlbackup'
 
 # configuration file bigip_log_destination
 automysqlbackup_config_dst: '/etc/automysqlbackup/automysqlbackup.conf'
