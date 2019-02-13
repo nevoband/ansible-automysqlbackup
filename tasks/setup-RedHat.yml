@@ -6,9 +6,12 @@
     state: present
 
 - name: download automysql script
-  fetch:
-    src: "{{ automysqlbackup_download_url }}"
+  get_url:
+    url: "{{ automysqlbackup_download_url }}"
     dest: "{{ automysqlbackup_install_dst }}"
+    owner: root
+    group: root
+    mode: 0660
 
 - name: create config directory
   file:
@@ -30,6 +33,3 @@
     user: root
     job: '{{ automysqlbackup_install_dst }}'
     cron_file: ansible_automysqlbackup
-  
-
-  
